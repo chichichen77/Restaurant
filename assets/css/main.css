@@ -2118,6 +2118,7 @@ input, select, textarea {
 		padding: 0 2.5em;
 		text-overflow: ellipsis;
 		overflow: hidden;
+		background-color:white;
 	}
 
 		input[type="submit"].icon:before,
@@ -2215,9 +2216,10 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #000000;
+			background-color: transparent; 
+			transition: transform 0.3s; 
 			box-shadow: none;
-			color: #ffffff !important;
+			color: #000000 !important;
 		}
 
 			input[type="submit"].primary:hover,
@@ -2235,7 +2237,80 @@ input, select, textarea {
 			.button.primary:active {
 				background-color: #1ebdd1;
 			}
+			/*地圖游標*/
+			.map-button {
+				display: flex; /* Use flexbox to align children */
+    align-items: center; /* Center the text vertically */
+    justify-content: center;
+				text-emphasis: true;
+				position: absolute;
+				font-size: 0.8rem;
+				height: 3em;
+				line-height: 3.8em;
+				border-radius: 1.25em;
+				background-color: transparent; 
+				/* border: none;  */
+				text-decoration: none; 
+				cursor: pointer;
+				color: transparent; 
+				transition: background-color 0.3s, color 0.3s; 
+				font-weight: bold;
+			}
+		
+			.map-button:hover {
+				color: inherit; 
+			}
+			
+			  .button-nangang:hover {
+				background: linear-gradient(to right, #c48c31, #0070bd)
+			  }
 
+			  .button-taipei:hover {
+				background: linear-gradient(to right, #e3002c, #0070bd);
+			  }
+
+			  .button-2:hover {
+				background: linear-gradient(to right, #f8b61c, #0070bd);
+			  }
+			  .button-3:hover {
+				background: linear-gradient(to right, #0070bd, #c48c31);
+			  }
+			  .button-4:hover {
+				background: linear-gradient(to right, #0070bd, #008659);
+			  }
+			  .button-5:hover {
+				background: linear-gradient(to right, #0070bd, #ffdb00);
+			  }
+			  .button-6:hover {
+				background: linear-gradient(to right, #c48c31, #0070bd);
+			  }
+			  .button-7:hover {
+				background: linear-gradient(to right, #0070bd, #ffdb00);
+			  }
+			  .button-8:hover {
+				background: linear-gradient(to right, #0070bd, #ffdb00);
+			  }
+			  .button-9:hover {
+				background: linear-gradient(to right, #ffdb00, #008659);
+			  }
+			  .button-10:hover {
+				background: linear-gradient(to right, #e3002c, #ffdb00);
+			  }
+			  .button-11:hover {
+				background: linear-gradient(to right, #e3002c, #c48c31);
+			  }
+			  .button-12:hover {
+				background: linear-gradient(to right, #e3002c, #008659);
+			  }
+			  .button-13:hover {
+				background: linear-gradient(to right, #e3002c, #008659);
+			  }
+			  .button-14:hover {
+				background: #e3002c;
+			  }
+			  .button-15:hover {
+				background: linear-gradient(to right, #c48c31, #008659);
+			  }
 /* Form */
 
 	form {

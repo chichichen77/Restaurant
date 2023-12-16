@@ -2255,8 +2255,22 @@ input, select, textarea {
 				color: transparent; 
 				transition: background-color 0.3s, color 0.3s; 
 				font-weight: bold;
+
 			}
-		
+		.row {
+            display: flex;
+            margin-bottom: 10px; /* 給每一行添加一些間隔 */
+        }
+        .column {
+            flex: 1; /* 每個 column 元素將占據相等的空間 */
+            padding: 0 10px; /* 在每個問題之間添加一些間隔 */
+        }
+        /* 響應式布局：在較小的屏幕上，問題將會堆疊 */
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+            }
+        }
 			.map-button:hover {
 				color: inherit; 
 			}

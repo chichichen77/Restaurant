@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>美食選擇調查表</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("myForm").addEventListener("submit", function (e) {
+                e.preventDefault(); // 阻止表單的預設提交行為
+
+                // 收集表單數據
+                var metroLine = document.getElementById("metro-line").value;//捷運線
+                var foodType = document.getElementById("food-type").value;//類型
+                var foodType = document.getElementById("flavor").value;//口味
+                var foodType = document.getElementById("price-range").value;//價格
+                var foodType = document.getElementById("dining-number").value;//人數
+                var foodType = document.getElementById("distance").value;//距離
+                var answer = '1';
+
+                if (metroLine === 'blue') {
+                    if (foodType === 'tw') {
+                    
+                    }else if (foodType === 'usa') {
+                        
+                    } else {
+                        // 如果 metroLine 不是 'blue' 也不是 'red'
+                    }
+                } else if (metroLine === 'orange') {
+                    // 如果 metroLine 是 'red'
+                } else if (metroLine === 'red') {
+                    // 如果 metroLine 是 'red'
+                } else if (metroLine === 'brown') {
+                    // 如果 metroLine 是 'red'
+                } else if (metroLine === 'green') {
+                    // 如果 metroLine 是 'red'
+                } else {
+                    // 如果 metroLine 不是 'blue' 也不是 'red'
+                }
+
+                // 創建顯示結果的字符串
+                var resultString = "您選擇的捷運線是：" + metroLine + "\n";
+                resultString += "您選擇的美食類型是：" + foodType + "\n";
+                // ... 添加其他表單數據到結果字符串
+
+                // 顯示結果
+                alert(resultString);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>美食選擇調查表</h2>
+    <form id="myForm">
+        <label for="metro-line">想選擇的捷運線：</label>
+        <select id="metro-line" name="metro-line">
+            <option value="blue">藍</option>
+            <option value="orange">橘</option>
+            <option value="red">紅</option>
+            <option value="brown">咖</option>
+            <option value="green">綠</option>
+            <option value="any">都可以</option>
+        </select>
+        <br>
+
+        <label for="food-type">想尋找的美食類型：</label>
+        <select id="food-type" name="food-type">
+            <option value="breakfast">早餐</option>
+            <option value="brunch">早午餐</option>
+            <option value="lunch">午餐</option>
+            <option value="dinner">晚餐</option>
+            <option value="cafe">咖啡廳</option>
+            <option value="snacks">小點心</option>
+        </select>
+        <br>
+
+        <label for="flavor">偏好的口味是：</label>
+        <select id="flavor" name="flavor">
+            <option value="tw">台式</option>
+            <option value="usa">美式</option>
+            <option value="kor">韓式</option>
+            <option value="jap">日式</option>
+            <option value="other">越式</option>
+            <option value="tai">泰式</option>
+            <option value="french">法式</option>
+            <option value="nonr">無</option>
+        </select>
+        <br>
+
+        <label for="price-range">選擇價格範圍：</label>
+        <select id="price-range" name="price-range">
+            <option value="cheap">銅板價</option>
+            <option value="100">100-300</option>
+            <option value="300">300-500</option>
+            <option value="500">500-700</option>
+            <option value="700">700-1000</option>
+            <option value="1000">1000以上</option>
+        </select>
+        <br>
+
+        <label for="dining-number">用餐人數：</label>
+        <select id="dining-number" name="dining-number">
+            <option value="smallg">1-3人</option>
+            <option value="mediumg">4-8人</option>
+            <option value="bugg">9人以上</option>
+        </select>
+        <br>
+
+
+        <label for="distance">離捷運站距離(走路)：</label>
+        <select id="distance" name="distance">
+            <option value="5min">5分鐘</option>
+            <option value="10min">10分鐘</option>
+            <option value="15min">15分鐘</option>
+        </select>
+        <br>
+
+
+        <input type="submit" value="確認">
+    </form>
+</body>
+
+</html>

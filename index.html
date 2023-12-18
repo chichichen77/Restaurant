@@ -667,10 +667,11 @@
 		</section>
 
 		<!-- Seven -->
+		<!-- Seven -->
 		<section class="wrapper style1 align-center">
 			<div class="inner medium">
 				<h2>Get in touch</h2>
-				<form method="post" action="#">
+				<form id="commentForm" action="post_comment.php" method="post" >
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
@@ -684,19 +685,12 @@
 							<label for="message">Message</label>
 							<textarea name="message" id="message" rows="6"></textarea>
 						</div>
-
 					</div>
 					<ul class="actions special">
-
-						
-
-						<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+						<li><input type="button" name="submit" id="submit" value="Send Message" /></li>
 					</ul>
+					<div id="messageContainer" style="display: none;"></div>
 				</form>
-
-
-
-
 
 			</div>
 		</section>
@@ -729,6 +723,43 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/game.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+	<!-- 引入 Google 登錄 API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- 引入主要的 JavaScript 檔案 -->
+    <script src="main.js"></script>
+
+	<script>
+	document.getElementById('submit').addEventListener('click', function(event) {
+		event.preventDefault();  // 阻止默认提交
+		console.log("Button clicked!");
+
+		var formData = new FormData(document.getElementById('commentForm'));
+
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', 'post_comment.php', true);
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				var response = JSON.parse(xhr.responseText);
+				console.log("Response received:", response);
+				showMessage(response.status === 'success' ? '成功繳交!' : 'Error: ' + response.message);
+			} else {
+				console.error("Request failed with status:", xhr.status);
+			}
+		};
+		xhr.onerror = function() {
+			console.error("Network error occurred");
+		};
+		xhr.send(formData);
+
+		function showMessage(message) {
+			alert(message);
+		}
+	});
+	</script>
+
 </body>
 
 </html>
